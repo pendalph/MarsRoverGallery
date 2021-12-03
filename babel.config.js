@@ -19,7 +19,6 @@ module.exports = {
           },
         },
       ],
-      'react-native-reanimated/plugin',
     ],
   "assumptions": {
     "setPublicClassFields": false
