@@ -1,7 +1,8 @@
 import 'iconsax-react-native';
 import React from 'react';
-import { StatusBar, Text, View } from 'react-native';
+import { StatusBar } from 'react-native';
 
+import { AppNavigator } from './router/AppNavigator';
 import { StoreProvider, createRootStore } from './store';
 
 const App: React.FC = (): JSX.Element => {
@@ -10,10 +11,7 @@ const App: React.FC = (): JSX.Element => {
   return (
     <StoreProvider store={store}>
       <StatusBar barStyle="dark-content" animated translucent backgroundColor="rgba(0,0,0,0)" />
-      <View>
-        <Text>Hello</Text>
-        <Text>MARS ROVER GALLERY</Text>
-      </View>
+      <AppNavigator />
     </StoreProvider>
   );
 };
