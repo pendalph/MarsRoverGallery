@@ -15,11 +15,12 @@ export default class AppStore {
     makeAutoObservable<AppStore>(this);
   }
 
-  getPhotos = async (): Promise<void> => {
+  getPhotos = async (page: number): Promise<void> => {
     this.isLoading = true;
+    console.log('called');
     try {
       const { data } = await http.get<TData>(
-        `mars-photos/api/v1/rovers/curiosity/photos?earth_date=2021-12-17&api_key=${API_KEY}`,
+        `mars-photos/api/v1/rovers/curiosity/photos?earth_date=2021-12-17&camera=${'FHAZ'}&&page=${page}&api_key=${API_KEY}`,
       );
       runInAction(() => {
         this.photos = data.photos;
