@@ -7,7 +7,7 @@ import { StoreProvider, createRootStore } from './store';
 
 const App: React.FC = (): JSX.Element => {
   const store = createRootStore();
-
+  // check .env
   return (
     <StoreProvider store={store}>
       <StatusBar barStyle="dark-content" animated translucent backgroundColor="rgba(0,0,0,0)" />
